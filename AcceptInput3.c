@@ -1,27 +1,31 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//   File Name:     AcceptInput1.c
-//   Description:    print the number of even number on screen         
+//   File Name:     AcceptInput3.c
+//   Description:   print even factors of number       
 //   Author:        Rutuja suresh Dhawale
 //   Date:          11/05/2025
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+
 #include<stdio.h>
 
-void PrintEven(int iNo)
+void DisplayEvenFactor(int iNo)
 {
-    int iCnt=0;
-    if(iNo<=0)
+    int i=0;
+    if(iNo<0)
     {
-        return ;
+        iNo=-iNo ;
     }
-    for(iCnt=1;iCnt<=iNo;iCnt++)
+    for(i=1;i<=(iNo/2);i++)
     {
-    
-        printf("%d\n",iCnt*2);
+        if(((iNo%i)==0)&&(i%2==0))
+        {
+            printf("%d\n",i);
+        }
     } 
+
 }
 
 int main()
@@ -30,7 +34,7 @@ int main()
     printf("Enter number\n");
     scanf("%d",&iValue);
 
-    PrintEven(iValue);
+    DisplayEvenFactor(iValue);
 
     return 0;
 }
