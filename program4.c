@@ -1,24 +1,38 @@
 #include<stdio.h>
 
-double FhtoCs(float fTemp)
+int CountFour(int iNo)
 {
-    float dCelcius = 0.0f;
-    dCelcius = ((fTemp - 32) * (5.0 / 9.0));
+    int iDigit = 0;
+    int iCnt = 0;
 
-    return dCelcius;
+    if(iNo<0)
+    {
+        iNo = -iNo;
+    }
+
+    while(iNo != 0)
+    {
+        iDigit = iNo % 10;
+        if(iDigit == 4)
+        {
+            iCnt++;
+        }
+        iNo = iNo / 10;
+    }
+    return iCnt;
 }
 
 int main()
 {
-    float fValue = 0.0f;
-    double dRet = 0.0;
+    int iValue = 0;
+    int iRet = 0;
 
-    printf("Enter temperature in Fahrenheit:");
-    scanf("%f", &fValue);
+    printf("Enter Number:");
+    scanf("%d", &iValue);
 
-    dRet = FhtoCs(fValue);
+    iRet = CountFour(iValue);
 
-    printf("The temperature in Celcius is %f", dRet);
+    printf("%d", iRet);
 
     return 0;
 }

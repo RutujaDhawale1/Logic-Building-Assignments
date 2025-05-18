@@ -1,29 +1,38 @@
 #include<stdio.h>
 
-int KMtoMeter(int iNo)
+int CountTwo(int iNo)
 {
+    int iDigit = 0;
+    int iCnt = 0;
+
     if(iNo<0)
     {
         iNo = -iNo;
     }
-    
-    int iMeter = 0;
 
-    iMeter = iNo * 1000;
-
-    return iMeter;
+    while(iNo != 0)
+    {
+        iDigit = iNo % 10;
+        if(iDigit == 2)
+        {
+            iCnt++;
+        }
+        iNo = iNo / 10;
+    }
+    return iCnt;
 }
 
 int main()
 {
-    int iValue =0 , iRet = 0;
+    int iValue = 0;
+    int iRet = 0;
 
-    printf("Enter Distance:");
+    printf("Enter Number:");
     scanf("%d", &iValue);
 
-    iRet = KMtoMeter(iValue);
+    iRet = CountTwo(iValue);
 
-    printf("The distance in meter is %d ", iRet);
+    printf("%d", iRet);
 
     return 0;
 }

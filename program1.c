@@ -1,27 +1,32 @@
 #include<stdio.h>
 
-double CircleArea(float fRadius)
+void DisplayDigit(int iNo)
 {
-    float Area = 0.0f;
-    float PI = 3.14f;
+    int iDigit = 0;
 
-    Area = 3.14 * fRadius * fRadius;
+    if(iNo<0)
+    {
+        iNo= -iNo;
+    }
 
-    return Area;
+    while(iNo >= 1)
+    {
+        iDigit = iNo % 10;
+        printf("%d\n", iDigit);
 
+        iNo = iNo / 10;
+    }
 }
 
 int main()
 {
-    float fValue = 0.0f;
-    double dRet = 0.0;
+    int iValue = 0;
 
-    printf("Enter Radius:");
-    scanf("%f",&fValue);
+    printf("Enetr number:");
+    scanf("%d", &iValue);
 
-    dRet = CircleArea(fValue);
-
-    printf(" The Area of circle is %.4f",dRet);
+    DisplayDigit(iValue);
 
     return 0;
+
 }

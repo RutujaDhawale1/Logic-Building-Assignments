@@ -1,29 +1,49 @@
 #include<stdio.h>
 
-double RectArea(float fWidth , float fHeight)
+#define true 1
+#define false 0
+
+typedef int bool;
+
+bool ChkZero(int iNo)
 {
-    double Area = 0.0;
+    int iDigit = 0;
 
-    Area = fWidth * fHeight;
+    if(iNo<0)
+    {
+        iNo = -iNo;
+    }
 
-    return Area;
-
+    while(iNo != 0)
+    {
+        iDigit = iNo%10;
+        if(iDigit == 0)
+        {
+            return true;
+        }
+        iNo = iNo /10;
+    }
+    return false;
 }
 
 int main()
 {
-    float fValue1 = 0.0f , fValue2 = 0.0f;
-    double dRet = 0.0;
+    int iValue = 0;
+    bool bRet = false;
 
-    printf("Enter Width:");
-    scanf("%f", &fValue1);
+    printf("Enter number:");
+    scanf("%d", &iValue);
 
-    printf("Enter Height:");
-    scanf("%f", &fValue2);
+    bRet = ChkZero(iValue);
 
-    dRet = RectArea(fValue1, fValue2);
-
-    printf(" The Area of Rectangle is %.3f ", dRet);
+    if(bRet== true)
+    {
+        printf("it contains Zero");
+    }
+    else
+    {
+        printf("it not cantains Zero");
+    }
 
     return 0;
 }
