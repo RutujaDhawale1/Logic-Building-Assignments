@@ -1,37 +1,29 @@
 #include<stdio.h>
 
-int EvenFactorial(int iNo)
+int KMtoMeter(int iNo)
 {
     if(iNo<0)
     {
-        iNo=-iNo;
+        iNo = -iNo;
     }
     
-    int iFact=1;
-    int iCnt=0;
-    for(iCnt=1; iCnt<=iNo; iCnt++)
-    {
-        if((iCnt%2)==0)
-        {
-        iFact=iFact*iCnt;
-        }
-    }
-    return iFact;
+    int iMeter = 0;
+
+    iMeter = iNo * 1000;
+
+    return iMeter;
 }
 
 int main()
 {
-    int iValue=0, iRet=0;
+    int iValue =0 , iRet = 0;
 
-    printf("Enter Number:");
-    scanf("%d",&iValue);
+    printf("Enter Distance:");
+    scanf("%d", &iValue);
 
-    iRet=EvenFactorial(iValue);
+    iRet = KMtoMeter(iValue);
 
-    printf("Even Factorial of number is %d",iRet);
+    printf("The distance in meter is %d ", iRet);
 
     return 0;
 }
-
-
-// time coplexity 0(N)

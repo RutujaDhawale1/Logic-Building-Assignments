@@ -1,32 +1,27 @@
 #include<stdio.h>
 
-void Display(int iNo)
+double CircleArea(float fRadius)
 {
-    if(iNo < 0)
-    {
-        iNo = -iNo;
-    }
-    int iCnt = 0;
+    float Area = 0.0f;
+    float PI = 3.14f;
 
-    for(iCnt=1 ; iCnt <= iNo ; iCnt++)
-    {
-        printf( " *  ", iCnt);    
-    }
-    for(iCnt = 1; iCnt <= iNo; iCnt++)
-    {
-    printf("  #  " , iCnt);
-    }
+    Area = 3.14 * fRadius * fRadius;
+
+    return Area;
+
 }
 
 int main()
 {
-    int iValue = 0;
+    float fValue = 0.0f;
+    double dRet = 0.0;
 
-    printf("Enter Number:");
-    scanf("%d",&iValue);
+    printf("Enter Radius:");
+    scanf("%f",&fValue);
 
-    Display(iValue);
+    dRet = CircleArea(fValue);
+
+    printf(" The Area of circle is %.4f",dRet);
+
+    return 0;
 }
-
-
-// Time complexity is 0(N)

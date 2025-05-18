@@ -1,45 +1,25 @@
 #include<stdio.h>
 
-int FactorialDiff(int iNo)
+double SquareMeter(float fNo)
 {
-    if(iNo<0)
-    {
-        iNo=-iNo;
-    }
+    double SquareMeter = 0.0;
+    SquareMeter = fNo * 0.092903;
     
-    int iFact1=1;
-    int iFact2=1;
-    int Diff=0;
-    int iCnt=0;
-    for(iCnt=1; iCnt<=iNo; iCnt++)
-    {
-        if((iCnt%2)==0)
-        {
-        iFact1=iFact1*iCnt;
-        }
-        else
-        {
-            iFact2=iFact2*iCnt;
-            
-        }
-        Diff=iFact1-iFact2;
-    }
-    return Diff;
+    return SquareMeter;
 }
 
 int main()
 {
-    int iValue=0, iRet=0;
+    float fValue = 0.0f;
+    double dRet = 0.0;
 
-    printf("Enter Number:");
-    scanf("%d",&iValue);
+    printf("Enter area in Square Feet:");
+    scanf("%f", &fValue);
 
-    iRet=FactorialDiff(iValue);
+    dRet = SquareMeter(fValue);
 
-    printf(" Factorial Difference is %d",iRet);
+    printf("The area in square meter is %f", dRet);
 
     return 0;
+
 }
-
-
-// Time complexity is 0(N)

@@ -1,25 +1,29 @@
 #include<stdio.h>
 
-int DollarToINR(int iNo)
+double RectArea(float fWidth , float fHeight)
 {
-    int INR=0;
-    int iRate=70;
+    double Area = 0.0;
 
-    INR=iNo * iRate;
+    Area = fWidth * fHeight;
 
-    return INR;
+    return Area;
+
 }
 
 int main()
 {
-    int iValue=0 , iRet=0;
+    float fValue1 = 0.0f , fValue2 = 0.0f;
+    double dRet = 0.0;
 
-    printf("Enter Number Of USD : ");
-    scanf("%d",&iValue);
+    printf("Enter Width:");
+    scanf("%f", &fValue1);
 
-    iRet = DollarToINR(iValue);
+    printf("Enter Height:");
+    scanf("%f", &fValue2);
 
-    printf("Value in INR is %d",iRet);
+    dRet = RectArea(fValue1, fValue2);
+
+    printf(" The Area of Rectangle is %.3f ", dRet);
 
     return 0;
 }

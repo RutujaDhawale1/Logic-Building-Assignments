@@ -1,37 +1,24 @@
 #include<stdio.h>
 
-int OddFactorial(int iNo)
+double FhtoCs(float fTemp)
 {
-    if(iNo<0)
-    {
-        iNo=-iNo;
-    }
-    
-    int iFact=1;
-    int iCnt=0;
-    for(iCnt=1; iCnt<=iNo; iCnt++)
-    {
-        if((iCnt%2)!=0)
-        {
-        iFact=iFact*iCnt;
-        }
-    }
-    return iFact;
+    float dCelcius = 0.0f;
+    dCelcius = ((fTemp - 32) * (5.0 / 9.0));
+
+    return dCelcius;
 }
 
 int main()
 {
-    int iValue=0, iRet=0;
+    float fValue = 0.0f;
+    double dRet = 0.0;
 
-    printf("Enter Number:");
-    scanf("%d",&iValue);
+    printf("Enter temperature in Fahrenheit:");
+    scanf("%f", &fValue);
 
-    iRet=OddFactorial(iValue);
+    dRet = FhtoCs(fValue);
 
-    printf("Odd Factorial of number is %d",iRet);
+    printf("The temperature in Celcius is %f", dRet);
 
     return 0;
 }
-
-
-// Time complexity is 0(N)
