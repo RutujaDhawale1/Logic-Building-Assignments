@@ -1,32 +1,38 @@
 #include<stdio.h>
 
-void DisplayDigit(int iNo)
+int CountEven(int iNo)
 {
     int iDigit = 0;
+    int iCnt = 0;
 
     if(iNo<0)
     {
-        iNo= -iNo;
+        iNo = -iNo;
     }
 
-    while(iNo >= 1)
+    while(iNo != 0)
     {
         iDigit = iNo % 10;
-        printf("%d\n", iDigit);
-
+        if((iDigit % 2)==0)
+        {
+            iCnt++;
+        }
         iNo = iNo / 10;
     }
+    return iCnt;
 }
 
 int main()
 {
     int iValue = 0;
+    int iRet = 0;
 
-    printf("Enetr number:");
+    printf("Enter Number:");
     scanf("%d", &iValue);
 
-    DisplayDigit(iValue);
+    iRet = CountEven(iValue);
+
+    printf("%d", iRet);
 
     return 0;
-
 }

@@ -1,25 +1,34 @@
 #include<stdio.h>
 
-int CountFour(int iNo)
+int MultDigits(int iNo)
 {
-    int iDigit = 0;
-    int iCnt = 0;
+    int iDigit1 = 0;
+    int iDigit2 = 1;
+    int iMul = 1;
 
     if(iNo<0)
     {
         iNo = -iNo;
     }
 
+    
     while(iNo != 0)
     {
-        iDigit = iNo % 10;
-        if(iDigit == 4)
+        iDigit1 = iNo % 10;
+        if(iDigit1 != 0)
         {
-            iCnt++;
+        iMul = iMul * iDigit1;
+        iDigit2 = 1;
         }
         iNo = iNo / 10;
     }
-    return iCnt;
+
+    if(!iDigit2)
+    {
+        return 0;
+    }
+
+    return iMul;
 }
 
 int main()
@@ -30,7 +39,7 @@ int main()
     printf("Enter Number:");
     scanf("%d", &iValue);
 
-    iRet = CountFour(iValue);
+    iRet = MultDigits(iValue);
 
     printf("%d", iRet);
 

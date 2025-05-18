@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int CountTwo(int iNo)
+int CountRange(int iNo)
 {
     int iDigit = 0;
     int iCnt = 0;
@@ -13,7 +13,7 @@ int CountTwo(int iNo)
     while(iNo != 0)
     {
         iDigit = iNo % 10;
-        if(iDigit == 2)
+        if((iDigit >3) && (iDigit < 7))
         {
             iCnt++;
         }
@@ -30,7 +30,7 @@ int main()
     printf("Enter Number:");
     scanf("%d", &iValue);
 
-    iRet = CountTwo(iValue);
+    iRet = CountRange(iValue);
 
     printf("%d", iRet);
 
